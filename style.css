@@ -1,0 +1,877 @@
+/* Zera margens e paddings padrão do navegador-Salvou minha "vida" sobre arrumar margens*/
+* {
+    margin: 0;
+    padding: 0;
+    /* Incluir padding e borda na largura do elemento (boa prática) */
+    box-sizing: border-box; 
+}
+
+/* Certifica-se de que o corpo não está com margem externa */
+body, html {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/*Seção 1 - Head*/
+.header {
+background-image: url('Imagens/banner-alvaro-1.png'); 
+background-position: center center; /* Centraliza a imagem no cabeçalho */
+ background-size: cover;;/*Com isto eu reduzi o tamanho da minha caixa do head e a imagem tbm*/
+ background-repeat: no-repeat;    /* Evita que a imagem se repita */
+ min-height: 50px; /* Reduza para algo pequeno, como 50px */
+ padding: 10px 0; /* Aqui eu diminui o tamanho da caixa do meu head*/
+ text-align:center;
+ width: 100%;
+font-family: verdana, arial;
+background-color: rgb(203, 220, 245); 
+border-radius: 10px;
+box-shadow: 5px 5px 5px rgb(
+61, 77, 102);
+ font-size: 25px;
+ color: blue
+}
+
+nav a {
+  text-decoration: none;
+    color: inherit; /* Opcional: faz o link herdar a cor do texto do pai */
+    font-size: 15px; 
+    font-weight: bold; 
+    transition: font-size 0.3s ease-in-out;
+}
+
+.header h1 {
+  color: rgba(0, 0 , 255, 80%);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;;
+}
+
+nav {
+  font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
+  }
+
+nav a:hover {
+  text-decoration: none; /* Opcional: Adiciona o sublinhado de volta no hover */
+  color: white;
+  filter: blur(150%);
+  font-weight: bold;
+  font-size: 25px; 
+  background-color: transparent;
+  }
+
+ul {
+  display: flex; /* Transforma a lista em um contêiner flexível */
+  list-style-type: none; /* Remove os marcadores de lista padrão (as bolinhas) */
+  padding: 0; /* Remove o padding padrão da lista */
+  margin: 0; /* Remove a margin padrão da lista */
+  justify-content: space-around; /* Opcional: distribui os itens com espaço igual entre eles */
+}
+
+h1 {
+  /* É crucial para que a animação funcione */
+  display: inline-block; 
+  filter: blur(150%);
+ 
+  /* Garante que o título não saia do lugar quando a animação estiver inativa */
+  transform: translateY(0); 
+}
+
+@keyframes flutuar {
+  0% {
+    transform: translateY(0); /* Posição inicial */
+  }
+  50% {
+    transform: translateY(-5px); /* Move 5px para cima */
+  }
+  100% {
+    transform: translateY(0); /* Retorna à posição inicial */
+  }
+}
+
+/* 3. Ativação da Animação no Hover no título da página*/
+h1 :hover {
+  color: white;
+  /* Aplica a animação 'flutuar' */
+  animation-name: flutuar;
+  
+  /* Duração do ciclo completo da animação */
+  animation-duration: 2s; 
+  
+  /* A animação se repetirá indefinidamente enquanto o mouse estiver sobre o elemento */
+  animation-iteration-count: infinite; 
+  
+  /* Tipo de aceleração, para um movimento mais natural */
+  animation-timing-function: ease-in-out; 
+
+  opacity: 80%;
+}
+
+#homeimg::before {
+  content: "";
+  display: inline-block;
+  width: 30px;              /* tamanho do ícone */
+  height: 30px;
+  background: url("Imagens/institution_icon.svg") no-repeat center;
+  background-size: contain;
+  background-color: transparent;
+}
+
+#java:before {
+  content: "";
+  display: inline-block;
+  width: 30px;              /* tamanho do ícone */
+  height: 30px;
+  background: url("Imagens/java-svgrepo-com.svg") no-repeat center;
+  background-size: contain;
+}
+
+#jvscript:before {
+  content: "";
+  display: inline-block;
+  width: 30px;              /* tamanho do ícone */
+  height: 30px;
+  background: url("Imagens/javascript-svgrepo-com.svg") no-repeat center;
+  background-size: contain;
+}
+
+#phplogo:before {
+  content: "";
+  display: inline-block;
+  width: 30px;              /* tamanho do ícone */
+  height: 30px;
+  background: url("Imagens/php-svgrepo-com.svg") no-repeat center;
+  background-size: contain;
+}
+
+#pyt:before {
+  content: "";
+  display: inline-block;
+  width: 30px;              /* tamanho do ícone */
+  height: 30px;
+  background: url("Imagens/python-svgrepo-com.svg") no-repeat center;
+  background-size: contain;
+}
+
+#about:before {
+  content: "";
+  display: inline-block;
+  width: 30px;              /* tamanho do ícone */
+  height: 30px;
+  background: url("Imagens/information-chat-svgrepo-com.svg") no-repeat center;
+  background-size: contain;
+}
+
+/*FIM DA SEÇÃO 1 - HEAD*/
+
+/*Título Principal*/
+
+.neon-btn{
+    display: flex; /* 🎯 Corrigido: O container agora é flexível */   
+    /* 1. Alinha os itens (o botão) no final do container (à direita) */
+    justify-content: flex-end; /* 2. Garante que o container ocupe 100% da largura para que a regra flex-end funcione */
+    position: relative; 
+    height: 35px; /* Dê uma altura para o container, para ele não colapsar */    
+    color: black;
+  }
+
+#theme-toggle {
+    /* **ESSENCIAL:** Este posicionamento é a referência para ::before e ::after */
+    position: relative; 
+    text-decoration: none;
+    font-size: 10px;
+    color: black;
+    border: 8px solid #ff0000; 
+    border-radius: 16px;
+    padding: 5px 10px;
+    /* Regras do Neon que estavam no .neon-btn */
+    font-size: 10px;
+    color: #ff0000;
+    border: 5px solid #ff0000;
+    border-radius: 10px;
+    padding: 10px 20px; /* Adicionar o padding de volta ao botão */
+    
+    /* O Box e Text Shadow é que criam o efeito de luz */
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3), 0 0 29px #ff0000;
+    box-shadow: inset 0 0 32px #ff0000, 0 0 32px #ff0000;
+
+    /* Adicione a transição para suavizar a luz */
+    transition: all 0.3s ease-in-out; 
+}
+
+/* PSEUDOCLASSE BEFORE: Ajuste a posição para ser ABSOLUTA */
+#theme-toggle::before {
+    pointer-events: none;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #ff0000;
+    left: 0;
+    top: 0; /* CORREÇÃO: Mude de 120% para 0 */
+    position: absolute; /* ESSENCIAL: Posiciona em relação ao botão */
+
+    transform: perspective(64px) rotateX(40deg) scale(1, 0.35);
+    filter: blur(64px);
+    opacity: 0.7;
+    z-index: -1; /* Garante que fique atrás do texto */
+}
+
+/* PSEUDOCLASSE AFTER: Ajuste a posição para ser ABSOLUTA */
+#theme-toggle::after {
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute; /* ESSENCIAL: Posiciona em relação ao botão */
+    
+    background-color: #ff0000;
+    box-shadow: 0 0 128px 32px #ff0000;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 100ms linear;
+}
+
+/* Efeitos de Hover/Focus (Mantenha a referência ao ID do botão) */
+#theme-toggle:hover::after,
+#theme-toggle:focus::after {
+    opacity: 1;
+}
+
+
+
+.modo-claro {
+  background-image: linear-gradient(
+    to bottom, 
+    #BCD2EE 0%,      /* Amarelo forte começa no topo (0%) */
+    #BCD2EE 150px,   /* O Amarelo se mantém 100% sólido até 150 pixels de altura */
+    white 500px      /* A transição para branco começa após 150px e termina em 500px */
+  );
+  /* Outras propriedades de controle: */
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Mantém o gradiente fixo ao rolar a página (opcional) */
+  min-height: 100vh;
+  text-align: center;
+  color: #333333; /* Texto Escuro/Preto */
+}
+
+.dark-mode {
+ 
+  background-image: linear-gradient(
+    to bottom, 
+    #2B2524 0%,      /* Amarelo forte começa no topo (0%) */
+    #2B2524 150px,   /* O Amarelo se mantém 100% sólido até 150 pixels de altura */
+    gray 500px      /* A transição para branco começa após 150px e termina em 500px */
+  ); /* Outras propriedades de controle: */
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Mantém o gradiente fixo ao rolar a página (opcional) */
+  min-height: 100vh;
+  text-align: center;
+  color: white; /* Texto Escuro/Preto */
+}
+
+h1, h2, iframe {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra leve para melhor legibilidade */
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.parag1, p {
+  max-width: 800px;       /* largura máxima para boa leitura */
+  margin: 0 auto;         /* centraliza no meio da tela */
+  text-align: justify;    /* deixa os parágrafos justificados */
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.6;       /* melhora o espaçamento entre linhas */
+}
+
+/* Primeira letra estilizada */
+.intro::first-letter {
+  font-size: 3em;         /* deixa a letra bem maior */
+  font-weight: bold;      
+  float: left;            /* faz o estilo de livro, letra destacada */
+  margin-right: 8px;      /* espaço entre a letra e o texto */
+  color: darkred;         /* cor de destaque */
+}
+  
+p {
+  /* Define um recuo de 2em (duas vezes o tamanho da fonte atual) 
+     apenas na primeira linha do parágrafo. */
+  text-indent: 2em;
+  line-height: 1.6;       /* melhora o espaçamento entre linhas */
+  
+  /* Garante que o texto se alinhe à esquerda (opcional, mas bom para parágrafos) */
+  text-align: justify; 
+}
+
+.resumolingu h2::before {
+  content: "⭐";
+  /* Mantendo seu posicionamento */
+  display: inline-block;
+  margin-right: 5px;
+  margin-bottom: 10px; 
+  /* Ajuste o alinhamento vertical para que a estrela não fique desalinhada com o texto */
+  vertical-align: middle; 
+  font-size: 1,50rem;
+  justify-content: space-between; 
+ /* Centraliza os itens na horizontal */
+   width: fit-content; 
+}
+
+.resumolingu h2 {
+  text-align: center;
+  margin-top: 40px;
+}
+
+
+.facts-section{
+  text-align: center;
+}
+
+.facts-section h2::before {
+   content: "⭐";
+  /* Mantendo seu posicionamento */
+  display: inline-block;
+  margin-right: 5px;
+  margin-bottom: 10px; 
+  /* Ajuste o alinhamento vertical para que a estrela não fique desalinhada com o texto */
+  vertical-align: middle; 
+  font-size: 1,50rem;
+  justify-content: space-between; 
+ /* Centraliza os itens na horizontal */
+   width: fit-content; 
+}
+
+.credito-video{
+text-align: center;
+font-size: 10px;
+font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
+color: gray;
+margin-top: 5px;
+margin-bottom: 20px;  
+}
+
+#fato-dinamico {
+    margin: 25px auto;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: justify;
+    /* 🎨 Estilo para Destaque */
+    font-size: 1.2em; /* Texto ligeiramente maior */
+    font-weight: 500; /* Texto semi-negrito */
+    background-color: rgba(0, 0, 0, 0.05); /* Um fundo suave no tema claro */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para 'levantar' o bloco */
+    
+    /* Suaviza a troca de fato */
+    transition: all 0.5s ease-in-out; 
+}
+
+#fato-dinamico::first-letter {
+    /* 🎯 Faz a letra ser maior e cair no bloco */
+    float: left;  
+    /* 🎨 Estilos para deixar a letra grande e chamativa */
+    font-size: 2em;      /* Aumenta o tamanho da letra (3x o tamanho normal) */
+    line-height: 1;      /* Garante que ela não empurre demais a linha */
+    padding-right: 8px;  /* Espaço à direita para separar do resto do texto */
+    padding-top: 4px;    /* Ajuste fino para alinhar ao topo */
+    font-weight: bold;   /* Deixa a letra em negrito */
+
+    /* Você pode usar a mesma cor Neon para destaque */
+    color: darkred;
+}
+
+#btn-fato {
+    /* 1. Reset Básico e Tamanho */
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    margin-top:10px;
+    cursor: pointer;
+    font-size: 16px; 
+    font-weight: bold;
+    text-transform: uppercase;
+    color: black;
+    border: 8px solid #ff0000; 
+    border-radius: 16px;
+    /* Regras do Neon que estavam no .neon-btn */
+    font-size: 10px;
+    color: #ff0000;
+    border: 5px solid #ff0000;
+    border-radius: 10px;
+    padding: 10px 20px; /* Adicionar o padding de volta ao botão */   
+    /* O Box e Text Shadow é que criam o efeito de luz */
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3), 0 0 29px #ff0000;
+    box-shadow: inset 0 0 32px #ff0000, 0 0 32px #ff0000;
+    /* Adicione a transição para suavizar a luz */
+    transition: all 0.3s ease-in-out; 
+}
+
+/* Efeito Hover: O brilho se intensifica */
+#btn-fato:hover {
+    position: relative; 
+    text-decoration: none;
+    font-size: 10px;
+    color: black;
+    border: 8px solid #ff0000; 
+    border-radius: 16px;
+    padding: 5px 10px;
+    /* Regras do Neon que estavam no .neon-btn */
+    font-size: 10px;
+    color: #ff0000;
+    border: 5px solid #ff0000;
+    border-radius: 10px;
+    padding: 10px 20px; /* Adicionar o padding de volta ao botão */
+    
+    /* O Box e Text Shadow é que criam o efeito de luz */
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3), 0 0 29px #ff0000;
+    box-shadow: inset 0 0 32px #ff0000, 0 0 32px #ff0000;
+
+    /* Adicione a transição para suavizar a luz */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Estilo para a seção inteira */
+.cta-final {
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 30px;
+  text-align: justify;
+}
+
+.cta-final h2 {
+  margin-bottom: 15px; 
+}
+
+.cta-final h2::before {
+   content: "⭐";
+  /* Mantendo seu posicionamento */
+  display: inline-block;
+  margin-right: 5px;
+  margin-bottom: 10px; 
+  /* Ajuste o alinhamento vertical para que a estrela não fique desalinhada com o texto */
+  vertical-align: middle; 
+  font-size: 1,50rem;
+  justify-content: space-between; 
+ /* Centraliza os itens na horizontal */
+   width: fit-content; 
+}
+
+.cta-final p.instrucao {
+  text-align: center;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #007bff; /* Use uma cor de destaque, como um azul */
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+
+
+/* Garante que os ícones fiquem alinhados e espaçados (Flexbox) */
+.icones-linguas {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Espaçamento entre os ícones */
+  margin-top: 30px;
+}
+
+.icone-btn {
+  /* Estilização para parecer um "botão" ou um bloco clicável */
+  text-decoration: none; /* Remove o sublinhado do link */
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+    font-size: 16px; 
+    text-transform: uppercase;
+    color: blue;
+    border: 8px solid #ff0000; 
+    /* Regras do Neon que estavam no .neon-btn */
+    font-size: 10px;
+    border: 5px solid #ff0000;
+    border-radius: 10px;
+    padding: 10px 20px; /* Adicionar o padding de volta ao botão */   
+    /* O Box e Text Shadow é que criam o efeito de luz */
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3), 0 0 29px #ff0000;
+    box-shadow: inset 0 0 32px #ff0000, 0 0 32px #ff0000;
+    /* Adicione a transição para suavizar a luz */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Feedback visual ao passar o mouse */
+.icone-btn:hover {
+  filter: blur(150%);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3), 0 0 29px #ff0000;
+  color: white;
+  font-weight: bold;
+  font-size: 16px; 
+  background-color: transparent;
+}
+
+
+/* Rodapé*/
+/* 1. Estilização do Rodapé Geral */
+/* 1. Estilo Básico do Rodapé (Background) */
+/* ------------------------------------------- */
+footer {
+    /* Fundo Escuro para tema de programação */
+    background-color: rgba(88, 92, 78, 50); 
+    color: #e9ecef;
+    padding: 20px 5%; /* Espaçamento interno */
+    font-family: 'Arial', sans-serif; /* Use a fonte do seu site */
+    text-align: center; /* Centraliza o conteúdo (H3, H4, P) */
+    width: 100%;
+
+}
+
+/* ------------------------------------------- */
+/* 2. Conteúdo Principal (.footer-content) */
+/* ------------------------------------------- */
+.footer-content {
+    margin: 0 auto;
+    padding-bottom: 20px; /* Garante que não há espaço extra interno na parte inferior */
+    margin-bottom: 0;  /* Garante que o contêiner não empurre o próximo */
+    margin-top: 0;
+  }
+
+.footer-content h3 {
+    /* Mantém as propriedades de margem no h3 (Solução anterior) */
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.footer-content h3 a {
+    /* Aplica os estilos do título ao link */
+    font-size: 1.8rem;
+    color: #4da6ff; /* Seu Azul Tech para destaque */
+    font-weight: bold;
+    
+    /* Remove a decoração de link padrão (sublinhado) */
+    text-decoration: none; 
+    
+    /* Garante que a cor mude no hover (Boa Prática) */
+    transition: color 0.3s;
+}
+
+.footer-content h3 a:hover {
+    color: #ffffff; /* Exemplo: Branco Puro no hover */
+}    
+
+.footer-content h4 {
+    /* O Slogan: "Seu primeiro código começa aqui." */
+    font-size: 1.2rem;
+    color: #b0c4de; /* Azul acinzentado */
+    margin: 10px 0;
+    font-weight: 500;
+    padding-top: 20px;
+}
+
+.footer-content p {
+    /* A Breve Descrição */
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #e9ecef; /* Branco gelo para legibilidade */
+    margin-bottom: 15px;
+}
+
+/* ------------------------------------------- */
+/* 3. Redes Sociais */
+/* ------------------------------------------- */
+.socials {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Centraliza os ícones */
+    padding: 0;
+    margin: 20px 0 30px 0;
+    gap: 25px;
+}
+
+.socials li a i {
+    font-size: 2.2rem;
+    color: #4da6ff; /* Ícones no seu tom Azul Tech */
+    transition: transform 0.3s, color 0.3s;
+}
+
+.socials li a i:hover {
+    color: #ff6b6b; /* Efeito de hover Vermelho/Sombra */
+    transform: scale(1.1); /* Aumenta um pouco no hover */
+}
+
+/* ------------------------------------------- */
+/* 4. A Barra de Copyright e Sombra Vermelha */
+/* ------------------------------------------- */
+.footer-bottom {
+    display: flex;
+    justify-content: center; /* Centraliza os ícones */
+    /* Fundo ainda mais escuro para maior contraste */
+    background-color: #111124; 
+    color: #7f8c8d;
+    font-size: 0.85rem;
+   
+    /* 1. GARANTE QUE NÃO HAJA MARGENS LATERAIS */
+    margin-top: 10px;   
+    /* 2. REMOVE QUALQUER POSSÍVEL RESTRIÇÃO DE LARGURA */
+    width: 100%; 
+    max-width: none; 
+    /* Se você definiu o padding do FOOTER-BOTTOM em % */
+    padding: 2px 2%; /* use a mesma % do footer principal */
+    /* A Mágica da Sombra Vermelha: Box Shadow */
+    box-shadow: 0 -4px 10px -4px #ff6b6b; 
+    /* Sombra indo para cima, dando o toque de destaque */
+}
+
+.footer-bottom p {
+  margin-top: -5px;  
+  margin-bottom: -5px;
+}
+
+/* Garante que o span (o texto do copyright) não tenha estilos indesejados */
+.footer-bottom span {
+    color: inherit; 
+    text-align: center;
+}
+
+.modal {  
+    display: none; 
+    position: fixed; 
+    z-index: 1000;  
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;  
+    /* ESSENCIAIS PARA CENTRALIZAÇÃO */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center;     /* Centraliza o conteúdo verticalmente */
+    overflow: auto; 
+    background-color: #2c3e50; /* Fundo escuro para destacar o neon */
+    color: #e9ecef;
+    border: 3px solid #ff0000; 
+    border-radius: 20px;
+}
+
+
+.modal-content {
+    position: relative; 
+    /* REINTRODUZIR O TAMANHO DA JANELA */
+    width: 80%;       /* Ocupa 80% do contêiner pai */
+    max-width: 400px; /* Limita o tamanho máximo para que seja uma "janela" */   
+    text-decoration: none;
+    font-size: 10px;
+    color: black;
+    border: 8px solid #ff0000; 
+    border-radius: 20px;
+    padding: 20px; /* Espaçamento interno adequado */
+    /* Regras do Neon que estavam no .neon-btn */
+    font-size: 10px;
+    color: #ff0000;
+    border: 5px solid #ff0000;
+    
+    /* O Box e Text Shadow é que criam o efeito de luz */
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3), 0 0 29px #ff0000;
+    box-shadow: inset 0 0 32px #ff0000, 0 0 32px #ff0000;
+
+    /* Adicione a transição para suavizar a luz */
+    transition: all 0.3s ease-in-out;
+    /*transform: scale(0.9);*/
+    transition: transform 0.5s ease-out;   
+}
+
+/* 3. ESTILIZAÇÃO ESPECÍFICA DO TEXTO (para espaçamento interno) */
+/* Título <h3> */
+.modal-content h3 {
+    color: #4da6ff; /* Cor de destaque (seu azul) */
+    font-size: 2.5rem;
+    margin-top: 0; /* Remove margem superior padrão */
+    margin-bottom: 15px; /* Espaçamento abaixo do título */
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Parágrafos <p> */
+.modal-content p {
+    font-size: 1rem;
+    line-height: 1.5; /* Espaçamento entre linhas */
+    margin-bottom: 15px; /* Espaçamento entre parágrafos */
+    color: lightgoldenrodyellow;
+
+}
+
+.close-button {
+    color: #4da6ff; /* Cor de destaque (seu azul) */
+    float: right;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: -10px;
+    margin-right: -10px;  
+    border: none;
+
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Seção 2 - Formulário*/
+form {
+  background-color: 
+rgb(127, 177, 201);
+text-align: center;
+font-family: Arial, sans-serif;
+}
+
+.aprelingu {
+  margin-top:70px;
+  margin-bottom:40px;
+  border: none;
+}
+
+.marqLingPret {
+  display: flex; /* Transforma o contêiner em um Flex Container */
+  justify-content: space-between; 
+; /* Centraliza os itens na horizontal */
+   width: fit-content; 
+  margin: 0 auto;
+  margin-top: 50px;
+margin-bottom:1px;
+}
+
+#position {
+  margin-top:10px;
+  display: flex; /* Transforma o contêiner em um Flex Container */
+  justify-content: space-between; 
+; /* Centraliza os itens na horizontal */
+   width: fit-content; 
+    margin: 0 auto;
+}
+
+
+legend {
+  font-weight: bold;
+  margin-top:100px;
+  margin-bottom:15px;
+}
+
+input:focus, textarea:focus {
+  border: 2px solid red;/* Exemplo de cor para o foco */
+}
+
+input:invalid, select:invalid, textarea:invalid {
+  border: 2px solid red;;
+}
+
+input:valid, select:valid, textarea:valid {
+  border: 2px solid green;
+}
+
+button:hover{
+  background-color: green;
+  border-radius: 20px;
+  width:100px;
+}
+
+/* Efeitos de transição para os labels */
+label:hover {
+  color: black;
+  font-weight: bold;
+  font-size: 20px; 
+  transition: font-size 0.3s ease-in-out;
+}
+
+/* Estilos para o contêiner geral do grupo de rádio */
+.radio-group {
+  display: flex; /* Transforma o contêiner em um Flex Container */
+  justify-content: space-between; 
+; /* Centraliza os itens na horizontal */
+   width: fit-content; 
+    margin: 0 auto; 
+  border-radius: 8px;
+  text-align: center;
+  padding: 15px;
+  display: flex; /* Opcional: para alinhar os itens em linha */
+  gap: 20px; /* Opcional: para criar espaçamento entre os itens */
+  margin-top: 30px;
+  }
+
+.radio-group input[type="radio"]:checked {
+  outline: 2px solid black;
+  border-color: red;
+  background-color:gray;
+  box-shadow: 2px 2px white;
+  }
+
+.radio-group input[type="radio"]:checked+label {
+color: black;
+}
+
+.radio-group2 {
+  display: flex; /* Transforma o contêiner em um Flex Container */
+  justify-content: space-between; 
+/* Centraliza os itens na horizontal */
+   width: fit-content; 
+    margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-align: center;
+  padding: 15px;
+  gap: 20px; /* Opcional: para criar espaçamento entre os itens */
+  margin-top: 30px;
+}
+
+.radio-group2 input[type="radio"]:checked {
+  outline: 2px solid rgb(
+61, 77, 102);
+  border-color: rgb(64, 125, 229);
+  background-color:gray;
+  box-shadow: white;
+}
+
+.radio-group2 input[type="radio"]:checked+label {
+color: rgb(61, 77, 102);
+font-family: verdana, Times New Roman; 
+font-style: italic;
+/* 1. Define a borda: espessura, tipo e cor */
+border: 2px solid rgb(61, 77, 102); 
+  
+/* 2. Adiciona espaço entre o texto e a borda */
+padding: 2.5px 5px;
+  
+/* 3. Opcional: Arredonda a borda para um visual mais suave */
+border-radius: 5px; 
+
+/* 4. CRUCIAL: Faz o label se comportar como um bloco para a borda */
+  display: inline-block;
+}
+
+
+input:first-of-type {
+  border: 2px solid blue;
+}
+
+
+textarea {
+  background-color: rgb(61, 77, 102);
+  color:white;
+  border: 1px solid green;;
+}
+
+#message {
+  margin-top: 20px;
+}
+
+
+
+  
+  
