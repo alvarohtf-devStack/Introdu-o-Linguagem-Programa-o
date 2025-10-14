@@ -1,5 +1,5 @@
 /* Zera margens e paddings padrão do navegador-Salvou minha "vida" sobre arrumar margens*/
-* {
+* { /* forçar o push aqui*/
     margin: 0;
     padding: 0;
     /* Incluir padding e borda na largura do elemento (boa prática) */
