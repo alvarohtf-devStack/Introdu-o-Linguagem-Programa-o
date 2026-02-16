@@ -275,6 +275,13 @@ h1, h2, iframe {
   margin-bottom: 20px;
 }
 
+h3 {
+  display: flex;
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */  
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra leve para melhor legibilidade */
+
+}
+
 .parag1, p {
   max-width: 800px;       /* largura máxima para boa leitura */
   margin: 0 auto;         /* centraliza no meio da tela */
@@ -282,6 +289,7 @@ h1, h2, iframe {
   font-family: Arial, sans-serif;
   font-size: 20px;
   line-height: 1.6;       /* melhora o espaçamento entre linhas */
+  
 }
 
 /* Primeira letra estilizada */
@@ -301,6 +309,8 @@ p {
   
   /* Garante que o texto se alinhe à esquerda (opcional, mas bom para parágrafos) */
   text-align: justify; 
+  padding: 20px 15px; /* Adiciona um pouco de espaçamento interno para melhor leitura */
+
 }
 
 .resumolingu h2::before {
@@ -718,160 +728,3 @@ footer {
 
 
 
-
-
-
-
-
-
-/*Seção 2 - Formulário*/
-form {
-  background-color: 
-rgb(127, 177, 201);
-text-align: center;
-font-family: Arial, sans-serif;
-}
-
-.aprelingu {
-  margin-top:70px;
-  margin-bottom:40px;
-  border: none;
-}
-
-.marqLingPret {
-  display: flex; /* Transforma o contêiner em um Flex Container */
-  justify-content: space-between; 
-; /* Centraliza os itens na horizontal */
-   width: fit-content; 
-  margin: 0 auto;
-  margin-top: 50px;
-margin-bottom:1px;
-}
-
-#position {
-  margin-top:10px;
-  display: flex; /* Transforma o contêiner em um Flex Container */
-  justify-content: space-between; 
-; /* Centraliza os itens na horizontal */
-   width: fit-content; 
-    margin: 0 auto;
-}
-
-
-legend {
-  font-weight: bold;
-  margin-top:100px;
-  margin-bottom:15px;
-}
-
-input:focus, textarea:focus {
-  border: 2px solid red;/* Exemplo de cor para o foco */
-}
-
-input:invalid, select:invalid, textarea:invalid {
-  border: 2px solid red;;
-}
-
-input:valid, select:valid, textarea:valid {
-  border: 2px solid green;
-}
-
-button:hover{
-  background-color: green;
-  border-radius: 20px;
-  width:100px;
-}
-
-/* Efeitos de transição para os labels */
-label:hover {
-  color: black;
-  font-weight: bold;
-  font-size: 20px; 
-  transition: font-size 0.3s ease-in-out;
-}
-
-/* Estilos para o contêiner geral do grupo de rádio */
-.radio-group {
-  display: flex; /* Transforma o contêiner em um Flex Container */
-  justify-content: space-between; 
-; /* Centraliza os itens na horizontal */
-   width: fit-content; 
-    margin: 0 auto; 
-  border-radius: 8px;
-  text-align: center;
-  padding: 15px;
-  display: flex; /* Opcional: para alinhar os itens em linha */
-  gap: 20px; /* Opcional: para criar espaçamento entre os itens */
-  margin-top: 30px;
-  }
-
-.radio-group input[type="radio"]:checked {
-  outline: 2px solid black;
-  border-color: red;
-  background-color:gray;
-  box-shadow: 2px 2px white;
-  }
-
-.radio-group input[type="radio"]:checked+label {
-color: black;
-}
-
-.radio-group2 {
-  display: flex; /* Transforma o contêiner em um Flex Container */
-  justify-content: space-between; 
-/* Centraliza os itens na horizontal */
-   width: fit-content; 
-    margin: 0 auto;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  text-align: center;
-  padding: 15px;
-  gap: 20px; /* Opcional: para criar espaçamento entre os itens */
-  margin-top: 30px;
-}
-
-.radio-group2 input[type="radio"]:checked {
-  outline: 2px solid rgb(
-61, 77, 102);
-  border-color: rgb(64, 125, 229);
-  background-color:gray;
-  box-shadow: white;
-}
-
-.radio-group2 input[type="radio"]:checked+label {
-color: rgb(61, 77, 102);
-font-family: verdana, Times New Roman; 
-font-style: italic;
-/* 1. Define a borda: espessura, tipo e cor */
-border: 2px solid rgb(61, 77, 102); 
-  
-/* 2. Adiciona espaço entre o texto e a borda */
-padding: 2.5px 5px;
-  
-/* 3. Opcional: Arredonda a borda para um visual mais suave */
-border-radius: 5px; 
-
-/* 4. CRUCIAL: Faz o label se comportar como um bloco para a borda */
-  display: inline-block;
-}
-
-
-input:first-of-type {
-  border: 2px solid blue;
-}
-
-
-textarea {
-  background-color: rgb(61, 77, 102);
-  color:white;
-  border: 1px solid green;;
-}
-
-#message {
-  margin-top: 20px;
-}
-
-
-
-  
-  
