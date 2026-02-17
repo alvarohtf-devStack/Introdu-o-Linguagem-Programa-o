@@ -721,6 +721,89 @@ footer {
     cursor: pointer;
 }
 
+/* --------------------Regras Chatbox-------------------- */
+/* Container Principal do Chat */
+#chatbot-container {
+    width: 100%;
+    max-width: 500px; /* Não fica largo demais no PC */
+    margin: 20px auto;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Garante que os cantos arredondados cortem o conteúdo */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+}
+
+/* Área onde as mensagens aparecem */
+#chat-mensagens {
+    height: 350px;
+    padding: 15px;
+    overflow-y: auto; /* Scroll automático */
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Estilo Geral dos Balões */
+.balao {
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Balão do Robô */
+.balao-bot {
+    align-self: flex-start;
+    background-color: #e9ecef;
+    color: #333;
+    border-bottom-left-radius: 2px;
+}
+
+/* Balão do Usuário */
+.balao-user {
+    align-self: flex-end;
+    background-color: #007bff; /* Azul padrão */
+    color: white;
+    border-bottom-right-radius: 2px;
+}
+
+/* Área dos Botões de Opção */
+#chat-opcoes {
+    padding: 15px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* Estilo dos Botões de Opção */
+.btn-opcao {
+    background-color: white;
+    color: #007bff;
+    border: 2px solid #007bff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-opcao:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+
+
+
 
 
 
