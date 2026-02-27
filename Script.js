@@ -60,7 +60,7 @@ window.addEventListener('click', function(event) {
     }
 });
 
-// ==========================================
+// // ==========================================
 // 4. CHATBOX SESMT (Página Intro JS)
 // ==========================================
 (function() {
@@ -144,7 +144,8 @@ window.addEventListener('click', function(event) {
         else if (escolha === 'Sim, estou Ciente') {
             pedirDadosPessoais();
         }
-        else if (escolha.includes("às")) {
+        // Ajuste aqui para reconhecer a data (se tiver / ou hrs)
+        else if (escolha.includes("/") || escolha.includes("hrs")) {
             dadosAgendamento.horarioEscolhido = escolha;
             finalizarAgendamento();
         }
@@ -163,20 +164,71 @@ window.addEventListener('click', function(event) {
     }
 
     function mostrarDatasDisponiveis() {
-        adicionarMensagem('Escolha o horário:', 'bot');
-        criarOpcoes(['17/02 às 09:00', '17/02 às 10:00', '19/02 às 14:00']);
+        adicionarMensagem('Consultando horários disponíveis...', 'bot');
+
+        const URL_CONSULTA = 'https://hook.us2.make.com/1en36buvkya5onaz1uckqp4xpp8gq96a';
+
+        fetch(URL_CONSULTA)
+            .then(response => response.json())
+            .then(vagasRaw => {
+                // AJUSTE PARA O FORMATO DO MAKE [{"0": "data"}]
+                // Transformamos a lista de objetos em uma lista de textos simples
+                const vagas = vagasRaw.map(v => v["0"]);
+
+                if (vagas && vagas.length > 0) {
+                    adicionarMensagem('Escolha um horário disponível:', 'bot');
+                    criarOpcoes(vagas);
+              function mostrarDatasDisponiveis() {
+        // 1. Limpa as opções anteriores para não duplicar botões
+        if (chatOpcoes) chatOpcoes.innerHTML = '';
+        
+        adicionarMensagem('Consultando horários disponíveis...', 'bot');
+
+        const URL_CONSULTA = 'https://hook.us2.make.com/1en36buvkya5onaz1uckqp4xpp8gq96a';
+
+        fetch(URL_CONSULTA)
+            .then(response => response.json())
+            .then(vagasRaw => {
+                // 2. Filtramos apenas o que é texto de data, ignorando números estranhos como 1672
+                const vagas = vagasRaw
+                    .map(v => v["0"])
+                    .filter(v => typeof v === 'string' && v.includes('/'));
+
+                if (vagas && vagas.length > 0) {
+                    adicionarMensagem('Escolha um horário disponível:', 'bot');
+                    criarOpcoes(vagas);
+                } else {
+                    adicionarMensagem('Desculpe, não há vagas livres no momento.', 'bot');
+                    criarOpcoes(['Voltar ao Início']);
+                }
+            })
+            .catch(error => {
+                console.error('Erro ao buscar vagas:', error);
+                adicionarMensagem('Erro técnico ao consultar vagas.', 'bot');
+            });
+    }  } else {
+                    adicionarMensagem('Desculpe, não há vagas livres no momento.', 'bot');
+                    criarOpcoes(['Voltar ao Início']);
+                }
+            })
+            .catch(error => {
+                console.error('Erro ao buscar vagas:', error);
+                adicionarMensagem('Erro técnico ao consultar vagas.', 'bot');
+                criarOpcoes(['Voltar ao Início']);
+            });
     }
 
     function finalizarAgendamento() {
         adicionarMensagem('<strong>Finalizando...</strong>', 'bot');
         
-        fetch('https://hook.us2.make.com/gylr928hnrnmaq30hjkrfh49ep4qnq8d', {
+        fetch('https://hook.us2.make.com/9vdink4vtfjn2xpyq8t9d09sladfc5m3', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(dadosAgendamento)
         })
         .then(() => {
-            adicionarMensagem('Sincronizado com o SESMT!', 'bot');
+            adicionarMensagem('Agendamento realizado com sucesso!', 'bot');
+            adicionarMensagem(`Resumo: ${dadosAgendamento.motivo} - ${dadosAgendamento.horarioEscolhido}`, 'bot');
         })
         .catch(() => {
             adicionarMensagem('Salvo localmente (erro de rede).', 'bot');
@@ -189,14 +241,12 @@ window.addEventListener('click', function(event) {
         chatMensagens = document.getElementById('chat-mensagens');
         chatOpcoes = document.getElementById('chat-opcoes');
         
-        // Se os IDs existirem na página atual, o chat inicia
         if (chatMensagens && chatOpcoes && chatMensagens.innerHTML.trim() === "") {
             adicionarMensagem('Olá! Sou o Assistente SESMT.', 'bot');
             criarOpcoes(['Suporte Técnico', 'Agendamento']);
         }
     }
 
-    // Inicialização segura
     if (document.readyState === "complete" || document.readyState === "interactive") {
         setTimeout(iniciarChat, 300);
     } else {

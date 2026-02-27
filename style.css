@@ -285,10 +285,9 @@ h3 {
 .parag1, p {
   max-width: 800px;       /* largura máxima para boa leitura */
   margin: 0 auto;         /* centraliza no meio da tela */
-  text-align: justify;    /* deixa os parágrafos justificados */
   font-family: Arial, sans-serif;
   font-size: 20px;
-  line-height: 1.6;       /* melhora o espaçamento entre linhas */
+  padding-top: 20px;
   
 }
 
@@ -721,14 +720,40 @@ footer {
     cursor: pointer;
 }
 
+
 /* --------------------Regras Chatbox-------------------- */
+/* Estilos área do chatbox*/
+.explicacao-projeto {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-family: sans-serif;
+}
+
+.explicacao-projeto h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.explicacao-projeto p {
+    color: #555;
+    line-height: 1.6;
+}
+
+
 /* Container Principal do Chat */
+#assistVirtual {
+  text-align: center;
+}
+
 #chatbot-container {
     width: 100%;
     max-width: 500px; /* Não fica largo demais no PC */
     margin: 20px auto;
-    background-color: #ffffff;
-    border: 1px solid #ddd;
+    background-color: #d16e94;
+    border: 1px solid #04a735;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -742,7 +767,7 @@ footer {
     height: 350px;
     padding: 15px;
     overflow-y: auto; /* Scroll automático */
-    background-color: #f8f9fa;
+    background-color: #38b64d;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -760,7 +785,7 @@ footer {
 /* Balão do Robô */
 .balao-bot {
     align-self: flex-start;
-    background-color: #e9ecef;
+    background-color: #12c238;
     color: #333;
     border-bottom-left-radius: 2px;
 }
@@ -802,6 +827,77 @@ footer {
 }
 
 
+/* Container das mensagens */
+#chat-mensagens {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    max-height: 400px;
+    overflow-y: auto;
+    background: #6db479;
+}
+
+/* Estilo comum dos balões */
+.balao {
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-family: sans-serif;
+    line-height: 1.4;
+    font-size: 14px;
+}
+
+/* Balão do Bot (Esquerda) */
+.balao-bot {
+    align-self: flex-start;
+    background-color: #e2e2e2;
+    color: #333;
+    border-bottom-left-radius: 2px;
+}
+
+/* Balão do Usuário (Direita) */
+.balao-user {
+    align-self: flex-end;
+    background-color: #007bff;
+    color: white;
+    border-bottom-right-radius: 2px;
+}
+
+/* Container dos botões de opção */
+#chat-opcoes {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    border-top: 1px solid #eee;
+}
+
+/* Estilo dos Botões de Opção */
+.btn-opcao {
+    background-color: white;
+    border: 2px solid #007bff;
+    color: #007bff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.btn-opcao:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Inputs de texto dentro do chat */
+.input-chat {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex-grow: 1;
+}
 
 
 

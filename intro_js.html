@@ -36,7 +36,7 @@
           </li>
 
           <li>
-            <a href="" id="about">Sobre</a>  
+            <a href="" id="about" onclick="abrirModal(); return false;">Sobre</a>  
           </li>
       </ul>
   </nav>
@@ -58,7 +58,7 @@
   <p>
     Dominar o JS é o diferencial de quem quer criar soluções reais. É a linguagem mais popular do mundo para desenvolvimento web e a peça fundamental para quem deseja automatizar processos e criar experiências imersivas no navegador.
   </p>
-
+  
   <h3>O Poder da Execução Instantânea:</h3>
   <p class="intro">
      O JavaScript é uma linguagem de programação que roda diretamente no navegador do usuário. Isso significa que, ao contrário de outras linguagens que exigem um ambiente de execução separado, o JavaScript pode ser executado instantaneamente, permitindo que os desenvolvedores criem experiências interativas e dinâmicas sem a necessidade de recarregar a página.
@@ -81,11 +81,18 @@
   </p>
 </section>
 
-<section class="chatbot-area">
+<section class="resumolingu">
     <h2>Assistente Virtual SESMT</h2>
-    <p>Agende seus exames ou tire dúvidas técnicas abaixo:</p>
+    <h3>Demonstração de Automação com JavaScript</h3>
+    <p>
+        Nesta demonstração, utilizo <strong>JavaScript</strong> para criar uma interface de chat interativa que coleta dados em tempo real. 
+        Ao finalizar o agendamento, o script envia essas informações via <code>API/Webhook</code> para o <strong>Make.com</strong>, 
+        que processa e registra automaticamente os dados em uma planilha do Google Sheets, demonstrando como reduzir 
+        processos manuais e aumentar a eficiência operacional.
+    </p>
+    <p id="assistVirtual">Agende seus exames ou tire dúvidas técnicas abaixo:</p>
     
-    <div id="chatbot-container">
+     <div id="chatbot-container">
         <div id="chat-mensagens"></div>
         <div id="chat-opcoes"></div>
     </div>
