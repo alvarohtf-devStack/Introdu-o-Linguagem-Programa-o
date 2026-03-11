@@ -11,6 +11,54 @@ body, html {
     width: 100%;
     }
 
+/* =========================================
+   SISTEMA DE UTILITÁRIOS - SNIPER FRAMEWORK
+   ========================================= */
+
+/* 1. TIPOGRAFIA (ESTILO E PESO) */
+.f-bold   { font-weight: bold; }
+.f-italic { font-style: italic; }
+.f-upper  { text-transform: uppercase; }
+.f-under  { text-decoration: underline; }
+
+/* 2. ALINHAMENTO DE TEXTO */
+.t-left    { text-align: left; }
+.t-center  { text-align: center; }
+.t-right   { text-align: right; }
+.t-justify { text-align: justify; }
+
+/* 3. ESCALA DE TAMANHOS (RESPONSIVOS) */
+.t-sm { font-size: 0.8rem; }  /* Pequeno para notas e legendas */
+.t-md { font-size: 1rem; }    /* Padrão do navegador */
+.t-lg { font-size: 1.5rem; }  /* Destaque médio */
+.t-xl { font-size: 2.2rem; }  /* Títulos de impacto */
+
+/* 4. CORES DE ESTADO (80/20) */
+.c-white   { color: #ffffff; }
+.c-muted   { color: #bbbbbb; } /* Cinza para textos secundários */
+.c-neon    { color: #ff4d4d; text-shadow: 0 0 10px #ff0000; } /* Seu vermelho neon */
+.c-success { color: #2ecc71; } /* Verde para lucros/profit */
+.c-danger  { color: #e74c3c; } /* Vermelho para erros/loss */
+
+/* 5. ESPAÇAMENTOS RÁPIDOS (MARGIN TOP) */
+.mt-1 { margin-top: 5px; }
+.mt-2 { margin-top: 15px; }
+.mt-3 { margin-top: 30px; }
+.mt-4 { margin-top: 50px; }
+
+/* 6. AUXILIARES DE LAYOUT */
+.flex-center { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.flex-between { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
 /*Seção 1 - Head*/
 .header {
 background-image: url('Imagens/banner-alvaro-1.png'); 
